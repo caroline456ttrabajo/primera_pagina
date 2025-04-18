@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Página Personal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background-color: #e1ecf4;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .translate-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 0 #0056b3;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .translate-btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      background-color: #ffffff;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      background-color: #e0f7fa;
+      color: #005b67;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 0 #b2ebf2;
+      transition: all 0.2s ease;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: #b2ebf2;
+      transform: translateY(-3px);
+    }
+
+    nav img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #e1ecf4;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        width: 90%;
+        justify-content: center;
+      }
+
+      .translate-btn {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mi Página Personal</h1>
+    <button class="translate-btn" onclick="traducir()">🌐 Traducir a Inglés</button>
+  </header>
+
+  <nav>
+    <a href="#inicio"><img src="https://img.icons8.com/ios-filled/50/home.png" alt="Inicio">Inicio</a>
+    <a href="#sobre-mi"><img src="https://img.icons8.com/ios-filled/50/user.png" alt="Sobre mí">Sobre Mí</a>
+    <a href="#proyectos"><img src="https://img.icons8.com/ios-filled/50/code.png" alt="Proyectos">Proyectos</a>
+    <a href="#contacto"><img src="https://img.icons8.com/ios-filled/50/secured-letter.png" alt="Contacto">Contacto</a>
+  </nav>
+
+  <div class="container">
+    <section id="inicio">
+      <h2>Inicio</h2>
+      <p>¡Bienvenido a mi página personal! Aquí podrás conocer más sobre mí y mis proyectos.</p>
+    </section>
+
+    <section id="sobre-mi">
+      <h2>Sobre Mí</h2>
+      <p>Soy una persona apasionada por el desarrollo web, el diseño moderno y la creación de experiencias digitales increíbles.</p>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+      <p>He trabajado en múltiples proyectos de desarrollo web utilizando tecnologías como HTML, CSS, JavaScript, y más.</p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>¿Querés contactarme? Podés enviarme un correo o seguirme en mis redes sociales.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 - Diseñado con ❤️ por [Tu Nombre]</p>
+  </footer>
+
+  <script>
+    function traducir() {
+      document.documentElement.lang = "en";
+      document.querySelector('h1').innerText = "My Personal Page";
+      document.querySelector('.translate-btn').innerText = "🌐 Volver al Español";
+      document.querySelector('.translate-btn').setAttribute("onclick", "volver()");
+      document.querySelector("#inicio").innerHTML = "<h2>Home</h2><p>Welcome to my personal page! Here you can learn more about me and my projects.</p>";
+      document.querySelector("#sobre-mi").innerHTML = "<h2>About Me</h2><p>I'm passionate about web development, modern design, and creating great digital experiences.</p>";
+      document.querySelector("#proyectos").innerHTML = "<h2>Projects</h2><p>I've worked on several web projects using technologies like HTML, CSS, JavaScript, and more.</p>";
+      document.querySelector("#contacto").innerHTML = "<h2>Contact</h2><p>You can contact me by email or follow me on social media.</p>";
+    }
+
+    function volver() {
+      document.documentElement.lang = "es";
+      document.querySelector('h1').innerText = "Mi Página Personal";
+      document.querySelector('.translate-btn').innerText = "🌐 Traducir a Inglés";
+      document.querySelector('.translate-btn').setAttribute("onclick", "traducir()");
+      document.querySelector("#inicio").innerHTML = "<h2>Inicio</h2><p>¡Bienvenido a mi página personal! Aquí podrás conocer más sobre mí y mis proyectos.</p>";
+      document.querySelector("#sobre-mi").innerHTML = "<h2>Sobre Mí</h2><p>Soy una persona apasionada por el desarrollo web, el diseño moderno y la creación de experiencias digitales increíbles.</p>";
+      document.querySelector("#proyectos").innerHTML = "<h2>Proyectos</h2><p>He trabajado en múltiples proyectos de desarrollo web utilizando tecnologías como HTML, CSS, JavaScript, y más.</p>";
+      document.querySelector("#contacto").innerHTML = "<h2>Contacto</h2><p>¿Querés contactarme? Podés enviarme un correo o seguirme en mis redes sociales.</p>";
+    }
+  </script>
+
+</body>
+</html>
